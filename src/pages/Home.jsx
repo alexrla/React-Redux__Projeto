@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
+import { useNavigate } from 'react-router-dom';
+
 import { addReserveRequest } from '../store/modules/reserve/action';
 import styled from 'styled-components';
 
@@ -8,9 +10,11 @@ import { MdFlightTakeoff } from 'react-icons/md'
 
 import api from '../services/api';
 
-function Home(props) {
+function Home() {
     const dispatch = useDispatch();
     const [trips, setTrips] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function loadApi() {
@@ -23,6 +27,8 @@ function Home(props) {
 
     function handleAdd(id)  {
         dispatch(addReserveRequest(id));
+
+       navigate("/reservas");
     }
 
     return (

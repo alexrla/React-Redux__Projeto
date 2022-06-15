@@ -1,5 +1,6 @@
 // npm install -g json-server
 // json-server server.json -p 3333
+// json-server server.json -p 3333 -d 2000
 // http://localhost:3333/trips
 
 // npm install axios
