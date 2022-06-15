@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { removeReserve, updateAmount } from '../store/modules/reserve/action';
+import { removeReserve, updateAmountRequest } from '../store/modules/reserve/action';
 
 import styled from 'styled-components';
 
@@ -18,11 +18,11 @@ function Reserve(props) {
 
     function decrementAmount(trip)  {
         // if(trip.amount === 1)   return;
-        dispatch(updateAmount(trip.id, trip.amount - 1));
+        dispatch(updateAmountRequest(trip.id, trip.amount - 1));
     }
 
     function incrementAmount(trip)  {
-        dispatch(updateAmount(trip.id, trip.amount + 1))
+        dispatch(updateAmountRequest(trip.id, trip.amount + 1))
     }
 
     return (
